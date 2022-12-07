@@ -10,14 +10,14 @@ Imports System.Web.UI.WebControls
 Imports System.Web.UI.WebControls.WebParts
 Imports System.Web.UI.HtmlControls
 #Region "#Prevent_Collapsing"
-Imports DevExpress.Web.ASPxTreeView
+Imports DevExpress.Web
 
 Partial Public Class _Default
 	Inherits System.Web.UI.Page
 	Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs)
 
 	End Sub
-	Protected Sub ASPxTreeView1_ExpandedChanging(ByVal source As Object, ByVal e As DevExpress.Web.ASPxTreeView.TreeViewNodeCancelEventArgs)
+	Protected Sub ASPxTreeView1_ExpandedChanging(ByVal source As Object, ByVal e As DevExpress.Web.TreeViewNodeCancelEventArgs)
 		e.Node.Expanded = True
 		If e.Node.Expanded AndAlso (ASPxTreeView1.SelectedNode IsNot Nothing) Then
 			Dim node As TreeViewNode = ASPxTreeView1.SelectedNode.Parent

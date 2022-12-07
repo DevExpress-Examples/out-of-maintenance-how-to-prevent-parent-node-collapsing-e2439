@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 #region #Prevent_Collapsing
-using DevExpress.Web.ASPxTreeView;
+using DevExpress.Web;
 
 public partial class _Default : System.Web.UI.Page
 {
@@ -17,7 +17,7 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
-    protected void ASPxTreeView1_ExpandedChanging(object source, DevExpress.Web.ASPxTreeView.TreeViewNodeCancelEventArgs e) {
+    protected void ASPxTreeView1_ExpandedChanging(object source, DevExpress.Web.TreeViewNodeCancelEventArgs e) {
         if ((e.Node.Expanded) && (ASPxTreeView1.SelectedNode != null)) {
             TreeViewNode  node = ASPxTreeView1.SelectedNode.Parent;
             while (node != null) {
